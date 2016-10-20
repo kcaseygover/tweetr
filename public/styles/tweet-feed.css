@@ -1,0 +1,52 @@
+.tweet-feed:hover article {
+  opacity: .99;
+}
+
+.tweet-feed article {
+  opacity: .7;
+  margin-top: 10px;
+  border: 2px solid lightgrey;
+  border-radius: 8px;
+  background-color: white;
+
+}
+.tweet-feed header{
+  margin: 0px;
+  padding: 5px;
+  width: 100%;
+  height: 80px;
+  background-color: #eee;
+
+}
+.tweet-feed header .avatar {
+  height: 60px;
+  width: 60px;
+  border-radius: 8px;
+  float: left;
+}
+.tweet-feed header h5 {
+  display: inline-block;
+  float: right;
+}
+
+.tweet-feed header h2 {
+  display: inline-block;
+
+}
+.tweet-feed main {
+  padding: 5px;
+  width: 100%;
+  height: 100px;
+
+}
+
+.tweet-feed footer {
+  height: 30px;
+  background-color: white;
+  padding: 5px;
+  border-top: 1px solid #d3d3d3;
+
+}
+.tweet-feed footer h6 {
+  display: inline;
+}

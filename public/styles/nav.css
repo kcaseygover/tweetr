@@ -1,0 +1,38 @@
+#nav-bar {
+  position: top fixed;
+  height: 80px;
+  width: 100%;
+  background-color: #00a087;
+  color: #e8fdff;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#nav-bar .logo {
+  height: 80px;
+  width: 80px;
+  float: left;
+}
+#nav-bar .header {
+  font-size:2em;
+  line-height: 80px;
+  float-left;
+  margin-left: 10px;
+}
+#nav-bar button {
+  float: right;
+  height: 60px;
+  background-color: #e8fdff;
+  margin-top: 10px;
+  width:150px;
+  border-radius: 6px;
+  font-size:1.5em;
+  color:#00a087;
+  border: solid 2px black;
+
+}
+#nav-bar button:hover {
+  background-color: white;
+  color: black;
+}
