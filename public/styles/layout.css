@@ -29,5 +29,6 @@ body {
   margin: auto;
   padding-top: 80px;
   background-color: white;
+  display: block;
 
  }

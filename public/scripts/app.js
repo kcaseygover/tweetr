@@ -14,6 +14,9 @@ $(document).ready(function()  {
     </main>
     <footer>
     <h6>${obj.created_at}</h6>
+    <img class="icon" src=/images/heart.png>
+    <img class="icon" src=/images/retweet.png>
+    <img class="icon" src=/images/flag.png>
     </footer>
     </article>`
 
@@ -30,10 +33,11 @@ $(document).ready(function()  {
   $("#tweet").submit(function( event ) {
     event.preventDefault();
     var $calChar = ($(this).find('textarea').val());
+    console.log($calChar);
     if (($calChar === "") || ($calChar === null) || ($calChar === undefined) || ($calChar === 0)) {
       $('#status').empty().append("Your tweet is not present.");
     }
-    if ($calChar.length > 140) {
+    else if ($calChar.length > 140) {
       $('#status').empty().append("Your tweet is too long!");
     } else {
 
@@ -49,20 +53,22 @@ $(document).ready(function()  {
       });
     }
   });
-
+/*
   $("#compose").click(function() {
     $('.new-tweet').slideToggle("slow", function() {
       $('textarea').focus()
     });
   });
-
+*/
   function loadTweets() {
+    console.log("loading tweets")
     $.ajax({
       method: 'GET',
-      url:`/tweets/`,
+      url:`/tweets`,
       success: (response) => {
+        console.log("got tweets", response)
         renderTweets(response);
-      },
+      }
     });
 
   };
@@ -71,6 +77,22 @@ $(document).ready(function()  {
 
 
 });
+/*
+//functionality for reply/retweet/like icons to appear/disappear on hover/no hover
+    $(".icon").hide();
+    $(".tweet-feed").mouseenter(function() {
+      $(".icon").show();
+    });
+    $(".tweet-feed").mouseleave(function() {
+      $(".icon").hide();
+    });
+*/
+//var sortTweets = tweetsList.sort(function (a, b) {
+  //      return a.created_at < b.created_at;
+    //  });
+      //sortTweets.forEach(function (tweet) {
+        //$('.tweet-feed').append(createTweetElement(tweet));
+      //});
 
 function escape(str) {
   var div = document.createElement('div');
