@@ -6,6 +6,8 @@ $(function()  {
     counter.text(charactersLeft);
     if(charactersLeft < 0) {
       counter.css('color', 'red');
+    } else {
+
     }
   });
 });

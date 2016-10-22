@@ -53,13 +53,13 @@ $(document).ready(function()  {
       });
     }
   });
-/*
+
   $("#compose").click(function() {
     $('.new-tweet').slideToggle("slow", function() {
       $('textarea').focus()
     });
   });
-*/
+
   function loadTweets() {
     console.log("loading tweets")
     $.ajax({
@@ -77,16 +77,16 @@ $(document).ready(function()  {
 
 
 });
-/*
-//functionality for reply/retweet/like icons to appear/disappear on hover/no hover
-    $(".icon").hide();
-    $(".tweet-feed").mouseenter(function() {
-      $(".icon").show();
-    });
-    $(".tweet-feed").mouseleave(function() {
-      $(".icon").hide();
-    });
-*/
+
+
+//$(".icon").hide();
+$(".tweet-feed").mouseenter(function() {
+  $(".icon").show();
+});
+//$(".tweet-feed").mouseleave(function() {
+  //$(".icon").hide();
+//});
+
 //var sortTweets = tweetsList.sort(function (a, b) {
   //      return a.created_at < b.created_at;
     //  });
