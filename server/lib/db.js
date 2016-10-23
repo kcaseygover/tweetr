@@ -16,7 +16,7 @@ const dbMethods = {
         throw err;
       }
 
-      db = mongoInstance;
+    db = mongoInstance;
 
     let collection = db.collection("tweets");
     //db.tweets.push(data);
@@ -36,16 +36,15 @@ const dbMethods = {
 
       db = mongoInstance;
 
-      console.log("getting tweets from db")
       let collection = db.collection("tweets");
       collection.find().toArray(function(err, results) {
-        console.log('found results', results)
+        results.sort(function(a, b) { return a.created_at < b.created_at });
         cb(results);
-        console.log('results', results);
       });
     });
   }
 }
+
 module.exports = {
   connect: (onConnect) => {
   onConnect(dbMethods);

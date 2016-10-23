@@ -1,5 +1,4 @@
 $(document).ready(function()  {
-// Test / driver code (temporary). Eventually will get this from the server.
 
   function createTweetElement(obj) {
     var $tweetdata =
@@ -25,22 +24,20 @@ $(document).ready(function()  {
 
   function renderTweets(tweets) {
     tweets.forEach(function(tweet) {
-       var $tweet = createTweetElement(tweet)
-      $('.tweet-feed').append($tweet);
-    });
+     var $tweet = createTweetElement(tweet)
+     $('.tweet-feed').append($tweet);
+   });
   }
 
   $("#tweet").submit(function( event ) {
     event.preventDefault();
     var $calChar = ($(this).find('textarea').val());
-    console.log($calChar);
     if (($calChar === "") || ($calChar === null) || ($calChar === undefined) || ($calChar === 0)) {
       $('#status').empty().append("Your tweet is not present.");
     }
     else if ($calChar.length > 140) {
       $('#status').empty().append("Your tweet is too long!");
     } else {
-
       $.ajax({
         method: 'POST',
         url: `/tweets/`,
@@ -54,11 +51,6 @@ $(document).ready(function()  {
     }
   });
 
-  $("#compose").click(function() {
-    $('.new-tweet').slideToggle("slow", function() {
-      $('textarea').focus()
-    });
-  });
 
   function loadTweets() {
     console.log("loading tweets")
@@ -75,24 +67,23 @@ $(document).ready(function()  {
 
   loadTweets();
 
+  $("#compose").click(function() {
+    $('.new-tweet').slideToggle("slow", function() {
+      $('textarea').focus()
+    });
+  });
+
+
+  $(".icon").hide();
+  $(".tweet-feed").mouseenter(function() {
+    $(".icon").show();
+  });
+  $(".tweet-feed").mouseleave(function() {
+    $(".icon").hide();
+  });
 
 });
 
-
-//$(".icon").hide();
-$(".tweet-feed").mouseenter(function() {
-  $(".icon").show();
-});
-//$(".tweet-feed").mouseleave(function() {
-  //$(".icon").hide();
-//});
-
-//var sortTweets = tweetsList.sort(function (a, b) {
-  //      return a.created_at < b.created_at;
-    //  });
-      //sortTweets.forEach(function (tweet) {
-        //$('.tweet-feed').append(createTweetElement(tweet));
-      //});
 
 function escape(str) {
   var div = document.createElement('div');

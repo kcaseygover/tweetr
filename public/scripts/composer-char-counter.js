@@ -1,4 +1,4 @@
-$(function()  {
+$(document).ready(function()  {
   $('textarea').keyup(function() {
     var value = $(this).val().length;
     var charactersLeft = 140 - value;
@@ -7,7 +7,7 @@ $(function()  {
     if(charactersLeft < 0) {
       counter.css('color', 'red');
     } else {
-
+      counter.css('color', 'black');
     }
   });
 });
